@@ -10,9 +10,9 @@
 
 To start with repository,
 
-> git clone https://github.com/nodesense/react-workshop
+> git clone https://github.com/nodesense/mindtree-react-redux-mobx
 
-> cd react-workshop
+> cd mindtree-react-redux-mobx
 
 > npm install
 
