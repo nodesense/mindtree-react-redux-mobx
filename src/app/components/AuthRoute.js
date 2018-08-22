@@ -2,6 +2,8 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
+import {Redirect} from 'react-router-dom';
+
 export default class AuthRoute extends Component {
     constructor(props) {
         super(props);
@@ -12,10 +14,11 @@ export default class AuthRoute extends Component {
     }
     
     render() {
+        let Component = this.props.component;
+        let auth = this.props.auth;
+
         return (
-            <div> 
-            <h2>AuthRoute</h2>
-            </div>
+           auth? <Component /> : <Redirect to="/login" />
         )
     }
 } 

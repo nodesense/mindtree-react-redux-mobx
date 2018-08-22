@@ -51,12 +51,14 @@ export default class About extends Component {
     render() {
 
         console.log("about render called");
+        console.log("MATCH ", this.props)
 
         return (
             <div>
                 <h2>About</h2>
 
                  <span>{this.state.pageLikes}</span>
+
 
                 <button id="up" onClick={this.up}>
                     Up
@@ -88,6 +90,10 @@ export default class About extends Component {
                     }
                  </ul>
                 }
+
+                <button onClick={ () => this.props.history.push("/login")}>
+                    Login
+                </button>
 
              
             </div>

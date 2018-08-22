@@ -11,12 +11,21 @@ import About from "./components/About";
 import Cart from './cart/components/Cart';
 import Login from "./components/Login";
 
+import AuthRoute from "./components/AuthRoute";
+
 import {BrowserRouter as Router, // html 5 browser history
         Route, 
         Switch} from 'react-router-dom';
 
 // class component
 export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            auth: false
+        }
+    }
     // create and return v.dom
     render() {
         console.log("App render");
@@ -25,10 +34,23 @@ export default class App extends React.Component {
             <div>
                 <Header appTitle = 'Product app' />
                 
+                { !this.state.auth && 
+                <button onClick={ () => this.setState({auth: true})}>
+                    Login
+                </button>
+                }
+
+                 { this.state.auth && 
+                <button onClick={ () => this.setState({auth: false})}>
+                    Logout
+                </button>
+                 }
+
+
                 <Switch>
                     <Route path="/" exact component={Counter} />
-                    <Route path="/cart" exact component={Cart} />
-                    <Route path="/about" exact component={About} />
+                    <AuthRoute path="/cart" exact component={Cart} auth={this.state.auth} />
+                    <Route path="/about" exact component={About}  auth={this.state.auth} />
                     <Route path="/login" exact component={Login} />
                 </Switch>
 
