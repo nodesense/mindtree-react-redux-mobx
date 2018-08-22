@@ -1,4 +1,5 @@
 {
-    "apiEndPoint": "http://localhost:7070/delayed",
-    "authEndPoint": "http://localhost:7070/oauth/token"
+    "build": "production",
+    "apiEndPoint": "http://g3.nodesense.ai:7070/delayed",
+    "authEndPoint": "http://g3.nodesense.ai:7070/oauth/token"
 }

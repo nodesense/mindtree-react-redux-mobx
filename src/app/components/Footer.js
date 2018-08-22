@@ -20,6 +20,7 @@ export default function Footer(props) {
                 <hr />
                 <p>Copyrights @{props.year}, {props.company}</p>
                 <p>City: {props.address.city}</p>
+                {/* <p>Build {VERSION}</p> */}
             </div>
         )
 } 

@@ -62,6 +62,7 @@ var config = {
   //import config from config; 
   //the imported config contains all the development.json content
   externals: {
+    siteInfo: JSON.stringify({siteName: 'React Cart App'}),
     config: JSON.stringify(require(path.join(__dirname,  "production.json")))
   },
  
@@ -77,6 +78,7 @@ var config = {
     new webpack.DefinePlugin ({
       VERSION: JSON.stringify("1.0.0"),
       PRODUCTION: JSON.stringify("true"),
+      APP_TITLE: JSON.stringify("Customer Product APP"),
       BASE_NAME: JSON.stringify("myapp"),
     }),
  

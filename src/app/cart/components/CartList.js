@@ -1,13 +1,15 @@
 // CartList.js
 
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
 import CartItem from "./CartItem";
 
  //TODO: PureComponent
+ // PureComponent already implement shouldComponentUpdate
+ // compare next props and state with current props and state
 
-export default class CartList extends Component {
+export default class CartList extends PureComponent {
     constructor(props) {
         super(props);
     }
@@ -35,6 +37,13 @@ export default class CartList extends Component {
                 <tbody>
                     {/* TODO props items map with CartItem */ }
 
+                    {
+                        items.map(item => (
+                            <CartItem item={item} 
+                                      key={item.id}
+                            />
+                        ))
+                    }
                 </tbody>
             </table>
             </div>

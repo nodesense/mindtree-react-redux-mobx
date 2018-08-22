@@ -1,8 +1,8 @@
 // CartItem.js
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-export default class CartItem extends Component {
+export default class CartItem extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -23,7 +23,7 @@ export default class CartItem extends Component {
 
         return (
             <tr>
-                <td>{item.name} - {this.context.theme}</td>
+                <td>{item.name} </td>
                 <td>{item.price}</td>
                 <td>
                      <input 

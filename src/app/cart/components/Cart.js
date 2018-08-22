@@ -12,12 +12,13 @@ export default class Cart extends Component {
 
         this.state = {
             items: [ 
-            			{id: 1, name: 'P1', price: 100, qty: 1}
+            			{id: 1, name: 'P1', price: 100, qty: 5}
             	   ],
             amount: 0, // sum of all items price * qty
             count: 0, // sum of all items qty
             flag: true
         }
+ 
     }
     
     addItem = () => {
@@ -29,8 +30,29 @@ export default class Cart extends Component {
             qty: 1
         }
 
-        //TODO:
- 
+        // BAD
+        // this.state.items.push(item)
+         // or BAD
+         // let items = this.state.items
+         // items.push(item) // BAD
+         
+         // GOOD
+         let items = [...this.state.items, item]
+         this.setState({
+             items
+             // items: items sugar
+         }, () => {
+             //callback, called after render method
+             console.log("Cart add item setState callback");
+             //Works, BAD,  trigger render again
+             //this.recalculate(this.state.items)
+         })
+
+         // BAD/wrong, setState is async, refer to old state
+         //this.recalculate(this.state.items)
+
+         // Good
+         this.recalculate(items)
     }
     
     removeItem = (id) => {
@@ -42,7 +64,12 @@ export default class Cart extends Component {
     }
 
     empty = () => {
-        //TODO
+        
+        this.setState({
+            items: []
+        })
+
+        this.recalculate([])
          
     }
 
@@ -55,6 +82,7 @@ export default class Cart extends Component {
 
     // derived data from state
     recalculate(items) {
+        
         let count = 0, 
             amount = 0;
 
@@ -67,10 +95,14 @@ export default class Cart extends Component {
             amount,
             count
         })
+
     }
 
     //TODO:
     //componentWillMount
+    componentWillMount() {
+        this.recalculate(this.state.items)
+    }
     
     
     render() {
