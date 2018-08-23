@@ -9,6 +9,8 @@ export default function loggerMiddleware(store) { // called once
 
                 // forward action to next middleware
                 // if no next middleware, it goes reducers
+                
+
                 return nextCallback(action)
         }
     }
