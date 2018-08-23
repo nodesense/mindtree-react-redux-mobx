@@ -1,4 +1,4 @@
-
+// Header.js
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -36,6 +36,13 @@ export default function Header(props) {
                          activeClassName="success"
                          to="/login">
                         Login 
+                </NavLink>
+
+
+                <NavLink className="button"
+                         activeClassName="success"
+                         to="/redux-counter">
+                        Redux Counter 
                 </NavLink>
   
                 <hr />
