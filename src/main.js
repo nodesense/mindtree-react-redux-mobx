@@ -12,6 +12,8 @@ import App from './app/App';
 import config from 'config'; 
 import siteinfo from "siteInfo";
 
+import store from "./app/store";
+
 //resolved at build time
 console.log("VERSION ", VERSION);
 console.log("APP TITLE", APP_TITLE);

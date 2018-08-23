@@ -41,6 +41,7 @@ export default class CartList extends PureComponent {
                         items.map(item => (
                             <CartItem item={item} 
                                       key={item.id}
+                                      removeItem={this.props.removeItem}
                             />
                         ))
                     }

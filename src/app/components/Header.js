@@ -22,7 +22,7 @@ export default function Header(props) {
                 <NavLink className="button"
                          activeClassName="success"
                          to="/cart">
-                        Cart 
+                        Cart  [CartTotal]
                 </NavLink>
 
 
