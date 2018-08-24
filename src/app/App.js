@@ -15,6 +15,10 @@ import AuthRoute from "./components/AuthRoute";
 
 import ReduxCounter from "./components/ReduxCounter";
 
+import CounterContainer 
+            from "./containers/CounterContainer";
+
+
 import {BrowserRouter as Router, // html 5 browser history
         Route, 
         Switch} from 'react-router-dom';
@@ -55,6 +59,7 @@ export default class App extends React.Component {
                     <Route path="/about" exact component={About}  auth={this.state.auth} />
                     
                     <Route path="/redux-counter" component={ReduxCounter} />
+                    <Route path="/counter" component={CounterContainer} />
                     <Route path="/login" exact component={Login} />
                 </Switch>
 

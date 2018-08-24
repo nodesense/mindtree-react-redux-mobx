@@ -13,6 +13,7 @@ import config from 'config';
 import siteinfo from "siteInfo";
 
 import store from "./app/store";
+import {Provider} from 'react-redux';
 
 //resolved at build time
 console.log("VERSION ", VERSION);
@@ -25,5 +26,9 @@ console.log("site ", siteinfo)
 
 // host virtual into real dom
 // Data Flow Virtual DOM to REAL DOM (one direction)
-render(<App /> , //v.dom
+// Provider expose store as react context
+render(<Provider store={store}>
+        <App />
+        </Provider>
+         ,  
         document.getElementById('root')) // real dom

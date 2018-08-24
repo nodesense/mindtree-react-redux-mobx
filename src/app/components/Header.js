@@ -44,6 +44,13 @@ export default function Header(props) {
                          to="/redux-counter">
                         Redux Counter 
                 </NavLink>
+
+
+                <NavLink className="button"
+                         activeClassName="success"
+                         to="/counter">
+                        Counter  Container
+                </NavLink>
   
                 <hr />
             </div>

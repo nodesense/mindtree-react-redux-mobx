@@ -72,9 +72,6 @@ export default class CartSummary extends Component {
         })
     }
      
-
-
-    
     render() {
         console.log("CartSummary Render");
         return (
