@@ -19,7 +19,7 @@ import CounterContainer
             from "./containers/CounterContainer";
 
 import ReduxCart from './redux-cart/containers/Cart';
-
+import ProductList from './redux-cart/containers/ProductList';
 
 import {BrowserRouter as Router, // html 5 browser history
         Route, 
@@ -57,6 +57,8 @@ export default class App extends React.Component {
 
                 <Switch>
                     <Route path="/" exact component={Counter} />
+                    <Route path="/products" component={ProductList} />
+                    
                     <AuthRoute path="/cart" exact component={Cart} auth={this.state.auth} />
                     <Route path="/about" exact component={About}  auth={this.state.auth} />
                     <Route path="/redux-cart" component={ReduxCart} />

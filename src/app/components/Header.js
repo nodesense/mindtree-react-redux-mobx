@@ -19,6 +19,14 @@ export default function Header(props) {
                         Counter 
                 </NavLink>
 
+
+                <NavLink className="button"
+                         activeClassName="success"
+                         to="/products">
+                        Products
+                </NavLink>
+
+
                 <NavLink className="button"
                          activeClassName="success"
                          to="/cart">

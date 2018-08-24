@@ -4,6 +4,9 @@ export default function loggerMiddleware(store) { // called once
         return function(action) { // called on every dispatch
                 console.log("LOGGER ", action);
 
+                // if (typeof action === 'function') {
+                //     return action(store.dispatch, store.getState)
+                // }
                 //if (action.type == 'COUNTER.RESET')
                 //    return false;
 
