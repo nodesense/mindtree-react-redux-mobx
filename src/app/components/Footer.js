@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import {withRouter} from 'react-router-dom';
 
+import CounterContainer from "../containers/CounterContainer";
+
 // functional component/pure functional component
 // presentational component
 // stateless component
@@ -27,6 +29,8 @@ function Footer(props) {
                 <button onClick={ () => props.history.push("/login")}>
                     Login
                 </button>
+
+                <CounterContainer />
             </div>
         )
 } 

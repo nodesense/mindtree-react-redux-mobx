@@ -2,6 +2,9 @@
 
 // bridge between React and Redux
 import {connect} from 'react-redux';
+
+import {bindActionCreators} from 'redux';
+
 // react component
 import FuncCounter from '../components/FuncCounter';
 // redux actions
@@ -31,9 +34,15 @@ export function mapDispatchToProps(dispatch) {
             let action = actions.increment(1)
             dispatch(action)
         },
-        reset: function() {
-            dispatch(actions.reset())
-        }
+        // reset: function() {
+        //     dispatch(actions.reset())
+        // }
+        // create and return wrapper function
+        // calling wrapper shall dispatch action
+        reset: bindActionCreators(actions.reset, dispatch),
+        // wrap all functions in actions
+        // props.actions.increment/props.actions.reset
+        actions: bindActionCreators(actions, dispatch)
     }
 }
 
@@ -49,3 +58,6 @@ const connectDecorator = connect(mapStateToProps,
 const CounterContainer= connectDecorator(FuncCounter)
 
 export default CounterContainer;
+
+//export default connect(mapStateToProps, mapDispatchToProps) 
+//                (FuncCounter)

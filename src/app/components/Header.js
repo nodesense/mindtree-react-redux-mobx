@@ -51,6 +51,13 @@ export default function Header(props) {
                          to="/counter">
                         Counter  Container
                 </NavLink>
+
+
+                <NavLink className="button"
+                         activeClassName="success"
+                         to="/redux-cart">
+                        Redux Cart
+                </NavLink>
   
                 <hr />
             </div>

@@ -6,6 +6,7 @@ import {createStore,
         from 'redux';
 
 import counterReducer from './state/counterReducer';
+import cartReducer from './redux-cart/state/cartReducer';
 
 import loggerMiddleware from './state/loggerMiddleware';
 import storageMiddleware from "./state/storageMiddleware";
@@ -13,6 +14,7 @@ import storageMiddleware from "./state/storageMiddleware";
 const rootReducer = combineReducers({
     // stateName: reducer function
     counter: counterReducer, 
+    items: cartReducer
     // more reducers goes here
 })
 

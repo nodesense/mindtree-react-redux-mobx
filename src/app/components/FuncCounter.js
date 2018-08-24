@@ -17,6 +17,15 @@ export default  function FuncCounter(props) {
             <button onClick={props.reset}>
                 Reset
             </button>
+
+            {/* call actions.increment by 2 =>  */}
+             <button onClick={() => props.actions.increment(2)}>
+                +2
+            </button>
+
+            <button onClick={props.actions.reset}>
+                Reset Actions
+            </button>
             
             </div>
         )
